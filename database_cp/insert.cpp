@@ -13,6 +13,48 @@
 
 using namespace std;
 
+//    for(int i=0;i<1000;i++)
+//    {
+//        infile >> content[i];
+//        if(content[i]!= "")
+//        {
+//            line++;
+//        }
+//        else break;
+//    }
+//    cout<<line;
+//    return 0;
+//}
+
+int get_line(string filename)
+{
+    ifstream infile;
+    string content[1000];
+    int line=0;
+    char* temp_file_name = (char*)(filename.data());
+
+    infile.open(temp_file_name);
+    for(int i=0;i<1000;i++)
+    {
+        infile >> content[i];
+        if(content[i]!= "")
+        {
+            line++;
+        }
+        else break;
+    }
+    return line;
+}
+
+
+void check(string table_filename,vector<string> all_data_name,vector<string> all_insert_data)
+{
+    int line;
+    ifstream infile;
+    string content[10000];
+    //for(int i=0;i<line;i++)
+}
+
 
 
 void insertData(string username,string sql)
@@ -22,10 +64,12 @@ void insertData(string username,string sql)
    std::string insert_data;
    std::string data_name;
    char* tail = "_data.csv";
+   char* tail2 = ".csv";
    char* temp;
    char* temp_data;
    char* temp_data_name;
    char* filename;
+   char* table_filename; //表名
    ofstream outfile;
    ifstream infile;
 
@@ -42,7 +86,6 @@ void insertData(string username,string sql)
         table_name = std::string(result[1]);
         data_name = std::string(result[2]);
         insert_data = std::string(result[3]);
-        //cout<<insert_data;
 
         temp = (char*)(table_name.data());
         temp_data = (char*)(table_name.data());
@@ -51,6 +94,7 @@ void insertData(string username,string sql)
         split(data_name,',',all_data_name);
         split(insert_data,',',all_insert_data);
 
+        //读取title名字
         infile.open(filename);
         if(!infile){
                printf("open or create file error!");
@@ -98,5 +142,7 @@ void insertData(string username,string sql)
 
 
    }
+   else
+        cout<<"wrong with sql"<<endl;
 
 }

@@ -4,7 +4,7 @@ using namespace std;
 #include<regex>
 #include <fstream>
 
-#include "insert.cpp"
+#include "select.cpp"
 
 
 void initialize();
@@ -64,8 +64,8 @@ int main()
 //                use_database(username, sql);
             else if (startswith(sql, insert_sql))
                 insertData(username, sql);
-//            else if startswith(sql, select_sql))
-//                Select.selectData(username, sql);
+            else if (startswith(sql, select_sql))
+                selectData(username, sql);
 //            else if startswith(sql, update_sql))
 //                Update.updateData(username, sql);
 //            else if startswith(sql, delete_sql))
@@ -86,41 +86,6 @@ int main()
     }
     else
         printf("false");
-
-
-
-
-
-//    while(true)
-//    {
-//        cout<<">";
-//        string sql;
-//        cin>>sql;
-//
-//    }
-
-//    //string str = "select * from hhh;";
-//    //smatch result;
-//    //regex pattern("select (.*) from (.*);");	//匹配5个任意单字符 + 下划线 + 4个数字
-//    //cout<<regex_match(str, pattern)<<endl;
-//
-//    //if (regex_match(str, result, pattern))
-//    //{
-////        cout << result[0] << endl;		//完整匹配结果，Hello_2018
-////        cout << result[1] << endl;		//第一组匹配的数据，Hello
-////        cout << result[2] << endl;		//第二组匹配的数据，2018
-////        cout<<"结果显示形式2"<<endl;
-////        cout<< result.str() << endl;	//完整结果，Hello_2018
-////        cout<< result.str(1) << endl;	//第一组匹配的数据，Hello
-////        cout << result.str(2) << endl;	//第二组匹配的数据，2018
-////    }
-////
-////    //遍历结果
-////    for (int i = 0; i < result.size(); ++i)
-////    {
-////        cout << result[i] << endl;
-////    }
-
 	return 0;
 }
 

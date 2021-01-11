@@ -1,4 +1,8 @@
 create table student (id int NOT NULL PRIMARY KEY,name char(20),class int);
 insert into student (id,name,class) values (1,'wrk',1);
-insert into student (id) values (1);
 insert into student (id,class) values (2,2);
+insert into student (id,name,class) values (3,'test',3);
+select * from student;
+select id,name from student;
+select * from student where id=1;
+select id,name from student where id=1;

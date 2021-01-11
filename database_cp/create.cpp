@@ -45,9 +45,9 @@ bool is_PrimaryKey(string item)
     string clue = "PRIMARY KEY";
     int position = item.find(clue);
     if (position != item.npos)
-        return false;
-    else
         return true;
+    else
+        return false;
 }
 
 bool is_NotNull(string item)
@@ -55,9 +55,9 @@ bool is_NotNull(string item)
     string clue = "NOT NULL";
     int position = item.find(clue);
     if (position != item.npos)
-        return false;
-    else
         return true;
+    else
+        return false;
 }
 
 int startswith(string s, string sub){
