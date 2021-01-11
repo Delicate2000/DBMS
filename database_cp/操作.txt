@@ -1,0 +1,4 @@
+create table student (id int NOT NULL PRIMARY KEY,name char(20),class int);
+insert into student (id,name,class) values (1,'wrk',1);
+insert into student (id) values (1);
+insert into student (id,class) values (2,2);

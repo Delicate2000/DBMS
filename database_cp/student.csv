@@ -1,0 +1,4 @@
+Name,Type,IsPrimaryKey,IsNotNULL
+id,int,0,0
+name,char(20),1,1
+class,int,1,1
